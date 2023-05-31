@@ -1,7 +1,7 @@
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
 
 import { useState } from 'react';
-import {sliderItems} from '../../data/dataSlider'
+import { sliderItems } from '../../data/sliderItems';
 import styled from 'styled-components';
 import style from './Slider.module.css';
 
@@ -54,18 +54,18 @@ const Slider = () => {
         <AiOutlineArrowLeft />
       </Arrow>
       <Wrapper slideIndex={slideIndex}>
-                {sliderItems.map((item) => (
-                    <Slide bg={item.bg} key={item.id}>
-                        <div className={style.imgContainer}>
-                            <img src={item.img} alt={item.title}/>
-                        </div>
-                        <div className={style.infoContainer}>
-                            <h1>{item.title}</h1>
-                            <p>{item.desc}</p>
-                        </div>
-                    </Slide>
-                ))}
-            </Wrapper>
+        {sliderItems.map((item) => (
+          <Slide bg={item.bg} key={item.id}>
+            <div className={style.imgContainer}>
+              <img src={item.img} alt={item.title} />
+            </div>
+            <div className={style.infoContainer}>
+              <h1>{item.title}</h1>
+              <p>{item.desc}</p>
+            </div>
+          </Slide>
+        ))}
+      </Wrapper>
       <Arrow direction="right" onClick={() => handleClick('right')}>
         <AiOutlineArrowRight />
       </Arrow>

@@ -1,12 +1,12 @@
-img {
+.container img {
   height: 80%;
 }
 
-h1 {
+.container h1 {
   font-size: 70px;
 }
 
-p {
+.container p {
   margin: 50px 0px;
   font-size: 20px;
   font-weight: 500;
