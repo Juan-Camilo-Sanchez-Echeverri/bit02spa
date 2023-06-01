@@ -1,0 +1,29 @@
+# Query: privado
+# ContextLines: 1
+
+6 results - 5 files
+
+src/App.jsx:
+  36          />
+  37:         <Route path="/bit02spa/privado" element={<PaginaPrivada />} />
+  38          <Route path="*" element={<PaginaNoEncontrada />} />
+
+src/components/PaginaIniciarSesion.jsx:
+  40        setLogueado(true);
+  41:       navigate('/bit02spa/privado');
+  42      } else {
+
+src/components/PaginaRegistro.jsx:
+  35      setLogueado(true);
+  36:     navigate('/bit02spa/privado');
+  37    };
+
+src/components/navegacion/Navegacion.jsx:
+  20        <>
+  21:         <Link to="bit02spa/privado">Privado</Link>
+  22          <button onClick={manejarCerrarSesion}>Cerrar sesión</button>
+
+src/pages/registro/Registro.jsx:
+  37      setLogueado(true);
+  38:     navigate('/bit02spa/privado');
+  39    };

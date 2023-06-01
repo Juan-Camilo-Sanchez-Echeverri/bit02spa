@@ -9,9 +9,9 @@ export const PaginaIniciarSesion = ({ setLogueado }) => {
   });
 
   useEffect(() => {
-    const backend = JSON.parse(localStorage.getItem('backend'));
-    if (backend) {
-      setBack(backend);
+    const login = JSON.parse(localStorage.getItem('login'));
+    if (login) {
+      setBack(login);
     }
   }, []);
 
@@ -38,7 +38,7 @@ export const PaginaIniciarSesion = ({ setLogueado }) => {
     if (esValido) {
       localStorage.setItem('token', JSON.stringify({ name: back.nombre }));
       setLogueado(true);
-      navigate('/privado');
+      navigate('/bit02spa/privado');
     } else {
       alert('Correo y/o contraseña incorrecta');
     }

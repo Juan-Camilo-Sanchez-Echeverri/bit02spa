@@ -12,26 +12,26 @@ const Navegacion = ({ logueado, setLogueado }) => {
   const manejarCerrarSesion = () => {
     localStorage.removeItem('token');
     setLogueado(false);
-    navigate('/login');
+    navigate('/bit02spa/login');
   };
 
   if (logueado) {
     salida = (
       <>
-        <Link to="/privado">Privado</Link>
+        <Link to="/bit02spa/privado">Privado</Link>
         <button onClick={manejarCerrarSesion}>Cerrar sesión</button>
       </>
     );
   } else {
     salida = (
       <>
-        <Link to="/login" style={{ textDecoration: 'none', color: 'black' }}>
+        <Link to="/bit02spa/login" style={{ textDecoration: 'none', color: 'black' }}>
           <span>Iniciar Sesion</span>
         </Link>
-        <Link to="/registro" style={{ textDecoration: 'none', color: 'black' }}>
+        <Link to="/bit02spa/registro" style={{ textDecoration: 'none', color: 'black' }}>
           <span>Registrarse</span>
         </Link>
-        <Link to="/cart" style={{ textDecoration: 'none', color: 'black' }}>
+        <Link to="/bit02spa/cart" style={{ textDecoration: 'none', color: 'black' }}>
           <AiOutlineShoppingCart />
         </Link>
       </>

@@ -5,7 +5,7 @@ import  Navegacion  from './components/navegacion/Navegacion';
 import { Home } from './pages/Home';
 import { Productos } from './pages/Productos';
 import { PaginaNoEncontrada } from './components/PaginaNoEncontrada';
-import { PaginaRegistro } from './components/PaginaRegistro';
+import { Registro } from './pages/registro/Registro';
 import { PaginaIniciarSesion } from './components/PaginaIniciarSesion';
 import { PaginaPrivada } from './components/PaginaPrivada';
 
@@ -25,16 +25,16 @@ function App() {
       <Navegacion logueado={logueado} setLogueado={setLogueado} />
       <Routes>
         <Route path="/bit02spa" element={<Home />} />
-        <Route path="/productos" element={<Productos />} />
+        <Route path="/bit02spa/productos" element={<Productos />} />
         <Route
-          path="/registro"
-          element={<PaginaRegistro setLogueado={setLogueado} />}
+          path="/bit02spa/registro"
+          element={<Registro setLogueado={setLogueado} />}
         />
         <Route
-          path="/login"
+          path="/bit02spa/login"
           element={<PaginaIniciarSesion setLogueado={setLogueado} />}
         />
-        <Route path="/privado" element={<PaginaPrivada />} />
+        <Route path="/bit02spa/privado" element={<PaginaPrivada />} />
         <Route path="*" element={<PaginaNoEncontrada />} />
       </Routes>
     </BrowserRouter>

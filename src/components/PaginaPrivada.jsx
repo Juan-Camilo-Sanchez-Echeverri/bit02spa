@@ -12,7 +12,7 @@ export const PaginaPrivada = () => {
     if (token) {
       setNombre(token.name);
     } else {
-      navigate('/iniciar-sesion');
+      navigate('/bit02spa/login');
     }
   }, []);
 

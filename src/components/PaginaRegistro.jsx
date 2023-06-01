@@ -27,7 +27,7 @@ export const PaginaRegistro = ({ setLogueado }) => {
       alert('Todos los campos son obligatorios');
       return;
     }
-    localStorage.setItem('backend', JSON.stringify(nuevoUsuario));
+    localStorage.setItem('login', JSON.stringify(nuevoUsuario));
     localStorage.setItem(
       'token',
       JSON.stringify({ name: nuevoUsuario.nombre })
