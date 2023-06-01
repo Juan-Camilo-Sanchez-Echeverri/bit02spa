@@ -24,7 +24,11 @@ function App() {
     <BrowserRouter>
       <Navegacion logueado={logueado} setLogueado={setLogueado} />
       <Routes>
+<<<<<<< HEAD
         <Route path="/" element={<Home />} />
+=======
+        <Route path="/bit02spa" element={<Home />} />
+>>>>>>> deveploment
         <Route path="/productos" element={<Productos />} />
         <Route
           path="/registro"

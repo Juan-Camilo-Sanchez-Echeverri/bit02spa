@@ -50,7 +50,7 @@ const Navegacion = ({ logueado, setLogueado }) => {
           </div>
         </section>
         <section className={style.logo}>
-          <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
+          <Link to="/bit02spa" style={{ textDecoration: 'none', color: 'black' }}>
             <h1>TOYS</h1>
           </Link>
         </section>
