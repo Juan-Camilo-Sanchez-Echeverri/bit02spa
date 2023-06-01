@@ -2,8 +2,9 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import  Navegacion  from './components/navegacion/Navegacion';
+import  Footer from './components/footer/Footer';
 import { Home } from './pages/Home';
-import { Productos } from './pages/Productos';
+import { Productos } from './pages/productos/Productos';
 import { PaginaNoEncontrada } from './components/PaginaNoEncontrada';
 import { Registro } from './pages/registro/Registro';
 import { Login } from './pages/login/Login';
@@ -37,6 +38,7 @@ function App() {
         <Route path="/bit02spa/privado" element={<PaginaPrivada />} />
         <Route path="*" element={<PaginaNoEncontrada />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

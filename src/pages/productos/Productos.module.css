@@ -1,0 +1,18 @@
+.box{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+  
+}
+
+.container{
+    display: grid;
+    padding: 20px;
+    justify-content: space-between;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 50px;
+}
+
+.box h2{
+  margin-bottom: 40px;
+}

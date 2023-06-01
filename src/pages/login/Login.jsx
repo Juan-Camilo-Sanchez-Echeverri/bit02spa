@@ -40,7 +40,7 @@ export const Login = ({ setLogueado }) => {
     if (esValido) {
       localStorage.setItem('token', JSON.stringify({ name: back.nombre }));
       setLogueado(true);
-      navigate('/bit02spa/privado');
+      navigate('/bit02spa/productos');
     } else {
       alert('Correo y/o contraseña incorrecta');
     }

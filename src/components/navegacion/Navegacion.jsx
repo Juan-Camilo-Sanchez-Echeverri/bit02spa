@@ -18,7 +18,10 @@ const Navegacion = ({ logueado, setLogueado }) => {
   if (logueado) {
     salida = (
       <>
-        <Link to="/bit02spa/privado">Privado</Link>
+        <Link to="/bit02spa/productos">Productos</Link>
+        <Link to="/bit02spa/cart" style={{ textDecoration: 'none', color: 'black' }}>
+          <AiOutlineShoppingCart />
+        </Link>
         <button onClick={manejarCerrarSesion}>Cerrar sesión</button>
       </>
     );

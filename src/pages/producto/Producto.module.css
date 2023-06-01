@@ -1,0 +1,28 @@
+.tarjeta {
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.tarjeta figure {
+  margin: 10px;
+}
+
+.tarjeta img {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-size: cover;
+  height: 180px;
+  border-radius: 20px;
+  object-fit: fill;
+}
+
+.tarjeta figcaption {
+  margin-bottom: 20px;
+}
+
+.tarjeta button {
+  margin: 20px 0;
+  padding: 10px 30px;
+  font-size: 20px;
+}
