@@ -6,7 +6,7 @@ import { Home } from './pages/Home';
 import { Productos } from './pages/Productos';
 import { PaginaNoEncontrada } from './components/PaginaNoEncontrada';
 import { Registro } from './pages/registro/Registro';
-import { PaginaIniciarSesion } from './components/PaginaIniciarSesion';
+import { Login } from './pages/login/Login';
 import { PaginaPrivada } from './components/PaginaPrivada';
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
         />
         <Route
           path="/bit02spa/login"
-          element={<PaginaIniciarSesion setLogueado={setLogueado} />}
+          element={<Login setLogueado={setLogueado} />}
         />
         <Route path="/bit02spa/privado" element={<PaginaPrivada />} />
         <Route path="*" element={<PaginaNoEncontrada />} />

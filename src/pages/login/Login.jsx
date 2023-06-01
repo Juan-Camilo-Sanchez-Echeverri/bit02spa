@@ -1,7 +1,9 @@
+import style from './Login.module.css';
+
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const PaginaIniciarSesion = ({ setLogueado }) => {
+export const Login = ({ setLogueado }) => {
   const [back, setBack] = useState(null);
   const [nuevaSesion, setNuevaSesion] = useState({
     correo: null,
@@ -45,22 +47,27 @@ export const PaginaIniciarSesion = ({ setLogueado }) => {
   };
 
   const salida = back ? (
-    <div>
-      <form className='formulario' onSubmit={manejarEnvio}>
-        <input
-          type='email'
-          placeholder='Correo'
-          onInput={manejarEntrada}
-          name='correo'
-        />
-        <input
-          type='password'
-          placeholder='Contraseña'
-          onInput={manejarEntrada}
-          name='contrasena'
-        />
-        <button type='submit'>Iniciar sesión</button>
-      </form>
+    <div className={style.container}>
+      <div className={style.wrapper}>
+        <h1 className={style.title}>INICIAR SESION</h1>
+        <form className={style.form} onSubmit={manejarEnvio}>
+          <input
+            type="email"
+            placeholder="email"
+            onInput={manejarEntrada}
+            name="correo"
+            className={style.input}
+          />
+          <input
+            type="password"
+            placeholder="Contraseña"
+            onInput={manejarEntrada}
+            name="contrasena"
+            className={style.input}
+          />
+          <button className={style.button}>Iniciar Sesion</button>
+        </form>
+      </div>
     </div>
   ) : (
     <div>Para iniciar sesión primero debe registrarse.</div>

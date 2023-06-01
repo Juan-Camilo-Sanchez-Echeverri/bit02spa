@@ -44,9 +44,9 @@ const Footer = () => {
       <div className={style.center}>
         <h3>Enlaces de Interes</h3>
         <ul className={style.list}>
-          <Link to="/" className={style.listItem}>Inicio</Link>
-          <Link to="/count" className={style.listItem}>Mi Cuenta</Link>
-          <Link to="/cart" className={style.listItem}>Carrito</Link>
+          <Link to="/bit02spa" className={style.listItem}>Inicio</Link>
+          <Link to="/bit02spa/count" className={style.listItem}>Mi Cuenta</Link>
+          <Link to="/bit02spa/cart" className={style.listItem}>Carrito</Link>
         </ul>
       </div>
       <div className={style.right}>
