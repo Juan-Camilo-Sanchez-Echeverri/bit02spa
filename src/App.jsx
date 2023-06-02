@@ -40,7 +40,7 @@ function App() {
         <Route path='/bit02spa/cart' element= {<Cart/>}/>
         <Route path="*" element={<PaginaNoEncontrada />} />
       </Routes>
-      <Footer />
+      <Footer logueado={logueado} setLogueado={setLogueado}/>
     </BrowserRouter>
   );
 }

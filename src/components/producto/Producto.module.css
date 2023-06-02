@@ -26,3 +26,11 @@
   padding: 10px 30px;
   font-size: 20px;
 }
+
+.botones{
+  gap: 20px;
+}
+
+.btnEliminar:hover{
+  background-color: red;
+}

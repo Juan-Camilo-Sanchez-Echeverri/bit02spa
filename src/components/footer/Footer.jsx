@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import style from './Footer.module.css';
 
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const SocialIcon = styled.div`
   width: 40px;
@@ -21,7 +22,29 @@ const SocialIcon = styled.div`
   margin-right: 20px;
 `;
 
-const Footer = () => {
+const Footer = ({ logueado, setLogueado }) => {
+  let salida = null;
+
+  if (logueado) {
+    salida = (
+      <>
+        <ul className={style.list}>
+          <Link to="/bit02spa" className={style.listItem}>
+            Inicio
+          </Link>
+          <Link to="/bit02spa/cart" className={style.listItem}>
+            Carrito
+          </Link>
+        </ul>
+      </>
+    );
+  } else {
+    salida = (
+      <>
+      </>
+    );
+  }
+
   return (
     <div className={style.container}>
       <div className={style.left}>
@@ -43,27 +66,23 @@ const Footer = () => {
       </div>
       <div className={style.center}>
         <h3>Enlaces de Interes</h3>
-        <ul className={style.list}>
-          <Link to="/bit02spa" className={style.listItem}>Inicio</Link>
-          <Link to="/bit02spa/count" className={style.listItem}>Mi Cuenta</Link>
-          <Link to="/bit02spa/cart" className={style.listItem}>Carrito</Link>
-        </ul>
+        {salida}
       </div>
       <div className={style.right}>
         <h3>Contacto</h3>
         <div className={style.contactItem}>
-          <RoomIcon style={{marginRight:"10px"}}/>
+          <RoomIcon style={{ marginRight: '10px' }} />
           <p>Medellin,Antioquia</p>
         </div>
         <div className={style.contactItem}>
-          <LocalPhoneIcon style={{marginRight:"10px"}}/>
+          <LocalPhoneIcon style={{ marginRight: '10px' }} />
           <p>312 810 12 13</p>
-          </div>
-          <div className={style.contactItem}>
-            <EmailIcon style={{marginRight:"10px"}}/>
-          <p>toys@toysmedellin.com</p>
-          </div>
         </div>
+        <div className={style.contactItem}>
+          <EmailIcon style={{ marginRight: '10px' }} />
+          <p>toys@toysmedellin.com</p>
+        </div>
+      </div>
     </div>
   );
 };

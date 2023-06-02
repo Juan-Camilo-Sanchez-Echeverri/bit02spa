@@ -2,14 +2,13 @@ import style from './Productos.module.css';
 
 import { useEffect, useState } from 'react';
 
-import Producto from '../producto/Producto';
+import Producto from '../../components/producto/Producto';
 import { products } from '../../data/products';
 
 export const Productos = ({ catalogo }) => {
   const [carrito, setCarrito] = useState([]);
   const [productos, setProductos] = useState([]);
   const [total, setTotal] = useState(0);
-
 
   useEffect(() => {
     const carritoActual = JSON.parse(localStorage.getItem('miCarrito'));
@@ -36,6 +35,25 @@ export const Productos = ({ catalogo }) => {
     setCarrito([...carrito, item]);
     actualizarProductos(item);
   };
+
+    const eliminarDelCarrito = (item) => {
+    const carritoActual = JSON.parse(localStorage.getItem('miCarrito')) || [];
+
+    const indice = carritoActual.findIndex(
+      (producto) => producto.id === item.id
+    );
+
+    if (indice !== -1) {
+      carritoActual.splice(indice, 1);
+
+      localStorage.setItem('miCarrito', JSON.stringify(carritoActual));
+
+      setCarrito(carritoActual);
+
+      actualizarProductos(item);
+    }
+  };
+
 
   const actualizarProductos = (producto) => {
     if (productos.length === 0) {
@@ -65,12 +83,12 @@ export const Productos = ({ catalogo }) => {
     setTotal(suma);
   };
 
-
   const productosListar = products.map((articulo) => (
     <Producto
       key={articulo.id}
       products={articulo}
       agregarAlCarrito={agregarAlCarrito}
+      eliminarDelCarrito={eliminarDelCarrito}
     />
   ));
 
