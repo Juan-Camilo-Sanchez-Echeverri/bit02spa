@@ -34,9 +34,6 @@ const Navegacion = ({ logueado, setLogueado }) => {
         <Link to="/bit02spa/registro" style={{ textDecoration: 'none', color: 'black' }}>
           <span>Registrarse</span>
         </Link>
-        <Link to="/bit02spa/cart" style={{ textDecoration: 'none', color: 'black' }}>
-          <AiOutlineShoppingCart />
-        </Link>
       </>
     );
   }

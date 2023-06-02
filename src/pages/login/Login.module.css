@@ -48,3 +48,10 @@
     cursor: not-allowed;
   }
 }
+
+.noSesion{
+  margin: 10px 0;
+  text-align: center;
+  color: red;
+  font-size: 30px;
+}

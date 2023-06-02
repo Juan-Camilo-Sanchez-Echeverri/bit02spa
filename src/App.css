@@ -19,7 +19,7 @@ button{
   border-radius: 10px;
   padding: 10px;
   background-color: white;
-  color:gray;
+  color:black;
   cursor: pointer;
   font-size: 20px;
 }
@@ -27,4 +27,26 @@ button{
 button:hover{
   background-color: teal;
   color: white;
+}
+
+.contenedor-pagar {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.detalles-pagar {
+  background-color: white;
+  border: 1px solid black;
+  padding: 20px 40px;
+  width: 640px;
+}
+.detalles-pagar button {
+  margin: 20px;
 }

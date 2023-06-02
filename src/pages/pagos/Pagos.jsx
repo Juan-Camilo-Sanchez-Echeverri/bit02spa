@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { Productos } from '../productos/Productos';
+import { products } from '../../data/products';
 
-export const PaginaPrivada = () => {
+export const Pagos = () => {
   const [nombre, setNombre] = useState(null);
 
   const navigate = useNavigate();
@@ -12,15 +14,14 @@ export const PaginaPrivada = () => {
     if (token) {
       setNombre(token.name);
     } else {
-      navigate('/bit02spa/login');
+      navigate('/iniciar-sesion');
     }
   }, []);
 
   return (
     <>
-      <div>Pagina privada</div>
       <div>Hola, {nombre}!</div>
-      <hr />
+      <Productos catalogo={products} />
     </>
   );
 };

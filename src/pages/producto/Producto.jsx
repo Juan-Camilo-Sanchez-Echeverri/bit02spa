@@ -1,21 +1,17 @@
 import style from './Producto.module.css';
 
-const Producto = ({ products }) => {
+const Producto = ({ products,agregarAlCarrito }) => {
   return (
-    <>
-      {products.map((product) => (
-        <div className={style.tarjeta} key={product.id}>
+        <div className={style.tarjeta} key={products.id}>
           <figure>
-            <img src={product.img} alt={product.nombre} />
-            <figcaption>{product.nombre}</figcaption>
+            <img src={products.img} alt={products.nombre} />
+            <figcaption>{products.nombre}</figcaption>
           </figure>
-          <div>${product.precio}</div>
+          <div>${products.precio}</div>
 
-          <button>Agregar</button>
+          <button onClick={()=>agregarAlCarrito(products)}>Agregar</button>
         </div>
-      ))}
-    </>
-  );
+      );
 };
 
 export default Producto;

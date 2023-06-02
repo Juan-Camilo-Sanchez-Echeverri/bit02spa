@@ -1,13 +1,16 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import  Navegacion  from './components/navegacion/Navegacion';
 import  Footer from './components/footer/Footer';
+
 import { Home } from './pages/Home';
-import { Productos } from './pages/productos/Productos';
-import { PaginaNoEncontrada } from './components/PaginaNoEncontrada';
+import { Pagos } from './pages/pagos/Pagos';
 import { Registro } from './pages/registro/Registro';
 import { Login } from './pages/login/Login';
+import { Cart } from './pages/cart/Cart';
+import { PaginaNoEncontrada } from './components/PaginaNoEncontrada';
 
 function App() {
   const [logueado, setLogueado] = useState(false);
@@ -25,7 +28,7 @@ function App() {
       <Navegacion logueado={logueado} setLogueado={setLogueado} />
       <Routes>
         <Route path="/bit02spa" element={<Home />} />
-        <Route path="/bit02spa/productos" element={<Productos />} />
+        <Route path="/bit02spa/pagos" element={<Pagos/>} />
         <Route
           path="/bit02spa/registro"
           element={<Registro setLogueado={setLogueado} />}
@@ -34,6 +37,7 @@ function App() {
           path="/bit02spa/login"
           element={<Login setLogueado={setLogueado} />}
         />
+        <Route path='/bit02spa/cart' element= {<Cart/>}/>
         <Route path="*" element={<PaginaNoEncontrada />} />
       </Routes>
       <Footer />

@@ -70,7 +70,7 @@ export const Login = ({ setLogueado }) => {
       </div>
     </div>
   ) : (
-    <div>Para iniciar sesión primero debe registrarse.</div>
+    <div className={style.noSesion}>Para iniciar sesión primero debe registrarse.</div>
   );
 
   return <>{salida}</>;
