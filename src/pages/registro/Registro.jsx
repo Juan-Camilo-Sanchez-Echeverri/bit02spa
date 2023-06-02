@@ -35,7 +35,7 @@ export const Registro = ({ setLogueado }) => {
       JSON.stringify({ name: nuevoUsuario.nombre })
     );
     setLogueado(true);
-    navigate('/bit02spa/privado');
+    navigate('/bit02spa/productos');
   };
 
   return (

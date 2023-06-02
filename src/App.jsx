@@ -8,7 +8,6 @@ import { Productos } from './pages/productos/Productos';
 import { PaginaNoEncontrada } from './components/PaginaNoEncontrada';
 import { Registro } from './pages/registro/Registro';
 import { Login } from './pages/login/Login';
-import { PaginaPrivada } from './components/PaginaPrivada';
 
 function App() {
   const [logueado, setLogueado] = useState(false);
@@ -35,7 +34,6 @@ function App() {
           path="/bit02spa/login"
           element={<Login setLogueado={setLogueado} />}
         />
-        <Route path="/bit02spa/privado" element={<PaginaPrivada />} />
         <Route path="*" element={<PaginaNoEncontrada />} />
       </Routes>
       <Footer />
