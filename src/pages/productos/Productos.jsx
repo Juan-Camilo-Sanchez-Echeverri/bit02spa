@@ -52,6 +52,25 @@ export const Productos = ({ catalogo }) => {
 
       actualizarProductos(item);
     }
+    //que pasa si no existe el producto en el carrito
+
+    const productosActuales = JSON.parse(localStorage.getItem('misProductos'));
+
+    const indiceProducto = productosActuales.findIndex(
+      (producto) => producto.id === item.id
+    );
+
+    if (indiceProducto !== -1) {
+      productosActuales.splice(indiceProducto, 1);
+
+      localStorage.setItem('misProductos', JSON.stringify(productosActuales));
+
+      setProductos(productosActuales);
+    }
+
+    obtenerTotal();
+
+    
   };
 
 
