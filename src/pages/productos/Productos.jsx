@@ -1,14 +1,15 @@
 import style from './Productos.module.css';
 
 import { useEffect, useState } from 'react';
+
 import Producto from '../producto/Producto';
-import { Cart } from '../cart/Cart';
+import { products } from '../../data/products';
 
 export const Productos = ({ catalogo }) => {
   const [carrito, setCarrito] = useState([]);
   const [productos, setProductos] = useState([]);
   const [total, setTotal] = useState(0);
-  const [pagar, setPagar] = useState(null);
+
 
   useEffect(() => {
     const carritoActual = JSON.parse(localStorage.getItem('miCarrito'));
@@ -64,57 +65,8 @@ export const Productos = ({ catalogo }) => {
     setTotal(suma);
   };
 
-  const limpiarCarrito = () => {
-    setCarrito([]);
-    setProductos([]);
-    setTotal(0);
-    setPagar(null);
-  };
 
-  const manejarPago = () => {
-    if (productos.length === 0) {
-      alert('Carrito vacio.');
-    } else {
-      const resumen = productos.map((p) => (
-        <div key={p.id}>
-          {p.nombre} ${p.precio} x {p.cantidad} = ${p.precio * p.cantidad}
-        </div>
-      ));
-
-      const gracias = (
-        <div className="detalles-pagar">
-          <div>Gracias por su compra.</div>
-          <button onClick={() => setPagar(null)}>cerrar</button>
-        </div>
-      );
-      const detalles = (
-        <div className="detalles-pagar">
-          <div className="titulo">Resumen</div>
-          {resumen}
-          <div>Total artículos: {carrito.length}</div>
-          <div>Total productos: {productos.length}</div>
-          <div>
-            <strong>Total: ${total}</strong>
-          </div>
-          <button onClick={limpiarCarrito}>Cancelar y limpiar carrito</button>
-          <button onClick={() => setPagar(null)}>Cancelar</button>
-          <button
-            onClick={() => {
-              setCarrito([]);
-              setProductos([]);
-              setTotal(0);
-              setPagar(gracias);
-            }}
-          >
-            Pagar
-          </button>
-        </div>
-      );
-      setPagar(detalles);
-    }
-  };
-
-  const productosListar = catalogo.map((articulo) => (
+  const productosListar = products.map((articulo) => (
     <Producto
       key={articulo.id}
       products={articulo}
@@ -124,16 +76,8 @@ export const Productos = ({ catalogo }) => {
 
   return (
     <>
-    {pagar && <div className='contenedor-pagar'>{pagar}</div>}
       <div className={style.box}>
         <h2>Productos</h2>
-        <Cart
-          totalArticulos={carrito.length}
-          totalProductos={productos.length}
-          total={total}
-          limpiarCarrito={limpiarCarrito}
-          manejarPago={manejarPago}
-        />
         <div className={style.container}>{productosListar}</div>
       </div>
     </>
