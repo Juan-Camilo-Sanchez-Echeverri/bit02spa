@@ -12,7 +12,7 @@ import { Cart } from './pages/cart/Cart';
 import { PaginaNoEncontrada } from './components/PaginaNoEncontrada';
 import { Productos } from './pages/productos/Productos';
 
-function App() {
+  function App() {
   const [logueado, setLogueado] = useState(false);
 
   useEffect(() => {
